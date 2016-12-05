@@ -1,0 +1,137 @@
+% Arquivo Principal para Dissertações do PPGCA - Udesc Joinville
+
+% abnTeX2: Modelo de Trabalho Academico em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+
+% Adaptado com base no abnTeX2
+% Por: Luís Felipe Bilecki
+% E-mail: luis.bilecki@gmail.com
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\documentclass[
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			
+	a4paper,			% tamanho do papel. 
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+%Pacotes prinicipais e customização
+\usepackage{./Estilo/udesc}
+
+% ---
+% Dados da Capa
+% ---
+
+\titulo{TÍTULO DO TRABALHO}
+\autor{NOME DO AUTOR}
+\local{Joinville}
+\instituicao{Universidade do Estado de Santa Catarina - UDESC}
+\campus{Centro de Ciências Tecnológicas - CCT}
+\curso{Mestrado em Computação Aplicada}
+\data{2016}
+\fulldata{xx de xxxx de 2017}
+
+% ---
+% Folha de Rosto
+% ---
+\inforosto{Dissertação submetida ao Programa de Pós-Graduação em Computação Aplicada do Centro de Ciências Tecnológicas da Universidade do Estado de Santa Catarina, para a obtenção do grau de Mestre em Computação Aplicada.}
+\orientador{Nome do Orientador}
+\orientadorRotulo{Dr. }
+\coorientador{Nome do Co-Orientador}
+\coorientadorRotulo{Dr. }
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+% ----
+% Elementos Pré-Textuais
+% ----
+\include{Partes/pretextual}
+
+% ---
+% Lista de Abreviaturas e Siglas
+% ---
+\begin{siglas}
+  \SingleSpacing
+  \item[OV]       Organização Virtual
+  \item[CC]       \textit{Cloud Computing}
+  \item[OC]       Oportunidade de Colaboração
+  \item[AHP]      \textit{Analytic Hierarchy Process}
+  \item[DEA]      \textit{Data Envelopment Analysis}
+\end{siglas}
+
+\begin{simbolos}
+	\SingleSpacing
+	\item[\%] Porcentagem
+	\item[$D_{ab}$] Distância Euclidiana
+	\item[$O(n)$] Ordem de um algoritmo
+\end{simbolos}
+
+% ---
+% inserir o sumario
+% ---
+
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+\textual
+
+%Retira o nome do capítulo do header
+\pagestyle{eudesc}
+\aliaspagestyle{chapter}{eudesc}
+
+% ---
+
+\include{Partes/cap1}
+\include{Partes/cap2}
+
+% ---
+% Finaliza o bookmark do PDF
+% ---
+\bookmarksetup{startatroot}% 
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{references}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+\begin{apendicesenv}
+	\include{Partes/apeA}
+\end{apendicesenv}
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+\begin{anexosenv}
+	\include{Partes/aneA}
+\end{anexosenv}
+
+\end{document}

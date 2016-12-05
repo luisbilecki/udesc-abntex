@@ -1,0 +1,267 @@
+% ---
+% LaTeX tamanho de fonte
+% ---
+%Command             10pt    11pt    12pt
+%\tiny               5       6       6
+%\scriptsize         7       8       8
+%\footnotesize       8       9       10
+%\small              9       10      10.95
+%\normalsize         10      10.95   12
+%\large              12      12      14.4
+%\Large              14.4    14.4    17.28
+%\LARGE              17.28   17.28   20.74
+%\huge               20.74   20.74   24.88
+%\Huge               24.88   24.88   24.88
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx,caption}	% Inclusão de gráficos
+\usepackage{longtable}          % Permite utilizar o ambiente longtable
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amssymb} 
+\usepackage[inner=3cm,outer=2cm,top=3.0cm,bottom=2cm,head=0.7cm,foot=0.7cm]{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{listings} % para código fonte
+\usepackage{epstopdf}
+
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}       % para geração de dummy text - 
+
+% ---
+% Citações
+% ---
+\usepackage[alf,abnt-etal-cite=3,abnt-emphasize=bf,bibjustif]{abntex2cite}
+
+% ---
+% Estilo de cabeçalho
+% ---
+\makepagestyle{eudesc}
+  %%cabeçalhos
+  \makeevenhead{eudesc} %%pagina par
+     {\small\thepage} %topo par esquerda
+     {}
+     {}
+  \makeoddhead{eudesc} %%pagina ímpar ou com oneside
+     {}
+     {}
+     {\small\thepage} %topo direita impar
+%----------------------------------------------------------------------------
+% Hifenizacao e caracteres especiais ptbr
+%----------------------------------------------------------------------------
+\RequirePackage[brazil]{babel}
+
+%----------------------------------------------------------------------------
+% Fonte Arial
+%----------------------------------------------------------------------------
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+%----------------------------------------------------------------------------
+% Espaçamentos entre linhas e parágrafos 
+%----------------------------------------------------------------------------
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.5cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{2 mm}  
+
+% Controle do espaçamento entre a legenda e a fonte (e nota) de figuras e tabelas}:
+\setlength{\abovecaptionskip}{0 mm}
+\setlength{\belowcaptionskip}{1 mm}
+
+%-----------------------------------------------------------------------------
+% Novos Comandos
+%-----------------------------------------------------------------------------
+% Campus - CCT, CEPLAN, CEFID e etc
+\providecommand{\imprimircampus}{}
+\newcommand{\campus}[1]{\renewcommand{\imprimircampus}{#1}}
+
+% Curso (Mestrado em ... ; Bacharelado em Ciências da ...)
+\providecommand{\imprimircurso}{}
+\newcommand{\curso}[1]{\renewcommand{\imprimircurso}{#1}}
+
+% Informações da folha de rosto
+\providecommand{\imprimirinforosto}{}
+\newcommand{\inforosto}[1]{\renewcommand{\imprimirinforosto}{#1}}
+
+% Orientador
+\providecommand{\imprimirorientadorRotulo}{}
+\newcommand{\orientadorRotulo}[1]{\renewcommand{\imprimirorientadorRotulo}{#1}}
+\providecommand{\imprimirorientador}{}
+
+% Coorientador
+\providecommand{\imprimircoorientadorRotulo}{}
+\newcommand{\coorientadorRotulo}[1]{\renewcommand{\imprimircoorientadorRotulo}{#1}}
+\providecommand{\imprimircoorientador}{}
+
+% Data Completa
+\providecommand{\imprimirfulldata}{}
+\newcommand{\fulldata}[1]{\renewcommand{\imprimirfulldata}{#1}}
+
+
+%----------------------------------------------------------------------------- 
+% Novos Nomes
+%-----------------------------------------------------------------------------
+\renewcommand{\listfigurename}{Lista de Figuras}
+\renewcommand{\listtablename}{Lista de Tabelas}
+%----------------------------------------------------------------------------- 
+% Tamanhos de Fontes
+%-----------------------------------------------------------------------------
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+
+%-----------------------------------------------------------------------------   
+% Customização da Capa
+%----------------------------------------------------------------------------- 
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center    
+  	\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirinstituicao} \\
+  	\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimircampus} \\
+  	\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimircurso}
+    
+    \vspace*{\fill}
+    {\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirautor}}
+    
+    \vspace*{\fill}
+	    \begin{Spacing}{1.0}
+	    	\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}
+	    \end{Spacing}
+    \vspace*{6.78cm}
+    
+    {\bfseries\large\MakeUppercase{\imprimirlocal}}
+    \par
+    {\bfseries\large\imprimirdata}
+  \end{capa}
+}
+
+%-----------------------------------------------------------------------------   
+% Customização da Folha de Rosto
+%----------------------------------------------------------------------------- 
+%   Use \imprimirfolhaderosto* caso seja necessário imprimir algo no verso da
+%   página, estando no modo twoside. Util para imprimir a Ficha
+%   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
+%   é idếntica.
+%----------------------------------------------------------------------------- 
+\renewenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\renewenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+	\center
+	{\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirautor}}
+
+	\vspace*{7cm}
+    {\ABNTEXchapterfont\bfseries\large\MakeUppercase{\imprimirtitulo}}
+
+    %Dados
+    \vspace*{2.5cm}
+    \abntex@ifnotempty{\imprimirinforosto}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+      	\SingleSpacing
+         \imprimirinforosto\\ \break
+            {\normalsize Orientador: \imprimirorientadorRotulo \imprimirorientador\par}
+         \par
+         \abntex@ifnotempty{\imprimircoorientador}{%
+            {\normalsize Coorientador: \imprimircoorientadorRotulo \imprimircoorientador \par}
+         }%
+         }%
+       \end{minipage}%
+      
+    \vfill
+    %Final
+    {\bfseries\large\MakeUppercase{\imprimirlocal}}
+    \par
+    {\bfseries\large\imprimirdata}
+  }
+
+%---
+% Redefinição do ambiente de dedicatória
+%---
+\renewenvironment{dedicatoria}[1][]
+{
+  \pagebreak
+    \hspace{0pt}
+      \vfill
+        \hfill
+        \begin{minipage}{0.50\textwidth}
+}
+{
+        \end{minipage}
+      \vfill
+    \hspace{0pt}
+  \pagebreak
+}
+
+%---
+% Redefinição epígrafe
+%---
+\renewenvironment{epigrafe}[1][]
+{
+  \pagebreak
+    \hspace{0pt}
+      \vfill
+        \hfill
+        \begin{minipage}{0.50\textwidth}
+}
+{       
+        \end{minipage}
+      \vfill
+    \hspace{0pt}
+  \pagebreak
+}
+%----------------------------------------------------------------------------
+% Ajeitar os destaques tipográficos do sumário
+%----------------------------------------------------------------------------
+\setlength{\cftbeforeparagraphskip}{0pt} 
+\setlength{\cftbeforesubsectionskip}{0pt} 
+\setlength{\cftbeforesectionskip}{0pt} 
+\setlength{\cftbeforesubsubsectionskip}{0pt} 
+\setlength{\cftbeforechapterskip}{\onelineskip} 
+ 
+% Secao Primaria (Chapter): Caixa alta, Negrito, tamanho 12 
+\makeatletter 
+
+\settocpreprocessor{chapter}{% 
+  \let\tempf@rtoc\f@rtoc% 
+  \def\f@rtoc{% 
+  \texorpdfstring{\bfseries\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}% 
+} 
+
+% Secao Secundária (section): Caixa alta,  tamanho 12 
+\renewcommand*{\cftsectionfont}{\normalfont}
+
+% Secao Terciária (subsection): Negrito,  tamanho 12 
+\renewcommand*{\cftsubsectionfont}{\bfseries}
+
+% Secao Quaternária (subsubsection): Negrito,  tamanho 12 
+\renewcommand*{\cftsubsubsectionfont}{\bfseries}
+
+\renewcommand*{\cftparagraphfont}{\normalfont\itshape}
+
+%% Tornar Referencias em REFERÊNCIAS
+\addto\captionsbrazil{
+    \renewcommand{\bibname}{REFER\^ENCIAS}
+}
+
