@@ -16,9 +16,9 @@ Apresenta um modelo baseado no abnTeX2 desenvolvido para auxiliar os discentes n
 
 # Instruções para o uso do modelo:
 
-1) Tenha instalado um compilador com o pdfLaTeX;
-2) Edite as informações referentes a capa e folha de rosto no arquivo Principal.tex;
-3) Compile o arquivo Principal.tex.
+1. Tenha instalado um compilador com o pdfLaTeX;
+2. Edite as informações referentes a capa e folha de rosto no arquivo Principal.tex;
+3. Compile o arquivo Principal.tex.
 
 Qualquer dúvida ou sugestão: luis.bilecki@gmail.com
 
