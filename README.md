@@ -20,7 +20,7 @@ Apresenta um modelo baseado no abnTeX2 desenvolvido para auxiliar os discentes n
 2. Edite as informações referentes a capa e folha de rosto no arquivo Principal.tex;
 3. Compile o arquivo Principal.tex.
 
-Qualquer dúvida ou sugestão: luis.bilecki@gmail.com
+Qualquer dúvida ou sugestão: luis.bilecki at gmail dot com
 
 
 
