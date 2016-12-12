@@ -22,5 +22,8 @@ Apresenta um modelo baseado no abnTeX2 desenvolvido para auxiliar os discentes n
 
 Qualquer dúvida ou sugestão: luis.bilecki at gmail dot com
 
+Fórum Google Groups:
+
+https://groups.google.com/forum/#!forum/templateppgcaudesc
 
 
