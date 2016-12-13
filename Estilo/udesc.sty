@@ -33,6 +33,7 @@
 \usepackage{ragged2e}
 \usepackage{listings} % para código fonte
 \usepackage{epstopdf}
+\usepackage[printonlyused]{acronym} % Para lista de acronimos
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -119,6 +120,7 @@
 %-----------------------------------------------------------------------------
 \renewcommand{\listfigurename}{Lista de Figuras}
 \renewcommand{\listtablename}{Lista de Tabelas}
+\renewcommand{\listadesiglasname}{Lista de Siglas e Abreviaturas}
 %----------------------------------------------------------------------------- 
 % Tamanhos de Fontes
 %-----------------------------------------------------------------------------
@@ -231,6 +233,15 @@
       \vfill
     \hspace{0pt}
   \pagebreak
+}
+
+% ---
+% Redefinição da Lista de abreviaturas e siglas
+\renewenvironment{siglas}{%
+  \pretextualchapter{\listadesiglasname}
+  \begin{acronym}}{%
+  \end{acronym}
+  \cleardoublepage
 }
 %----------------------------------------------------------------------------
 % Ajeitar os destaques tipográficos do sumário
